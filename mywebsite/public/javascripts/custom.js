@@ -1,13 +1,3 @@
-/* Author: Dat Tran */
-
-/*--------------------------------------------------------*/
-/* # TABLE OF CONTENTS */
-/*--------------------------------------------------------*/
-/*
-   # Js Check
-
-*/
-
 $(document).ready(function(){
 /*--------------------------------------------------------*/
 /* # GENERAL */
@@ -410,7 +400,7 @@ $(function() {
   $("#contact-form").on("submit",function(e){
     
     if($("#contact-form")[0].checkValidity()) {
-      $.post("mailer.php", $("#contact-form").serialize(),  function(response) {
+      $.post("/mail", $("#contact-form").serialize(),  function(response) {
         $('.success').fadeIn(500).html(response);
         $("#contact-form").fadeOut(300);
 		e.preventDefault();
